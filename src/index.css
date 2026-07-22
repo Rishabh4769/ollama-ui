@@ -1,0 +1,71 @@
+:root {
+  /* Color tokens — "trench" palette: descend from surface light to abyss dark */
+  --abyss: #061019;
+  --deep: #0c1b28;
+  --panel: #0e2233;
+  --trench-line: #1c3849;
+  --trench-line-soft: #142a38;
+  --bioluminesce: #2dd4bf;
+  --bioluminesce-dim: #1a8f80;
+  --coral: #ff7a63;
+  --foam: #eaf4f3;
+  --mist: #7fa0a6;
+  --mist-dim: #4d6870;
+  --danger: #ff5c72;
+
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--abyss);
+  color: var(--foam);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--trench-line);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mist-dim);
+}
+
+:focus-visible {
+  outline: 2px solid var(--bioluminesce);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
